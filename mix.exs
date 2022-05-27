@@ -20,7 +20,8 @@ defmodule GothExample.MixProject do
 
   defp deps do
     [
-      {:goth, "~> 1.2.0"}
+      {:goth, "~> 1.2.0"},
+      {:plug_cowboy, "~> 2.0"}
     ]
   end
 end
