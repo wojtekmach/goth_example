@@ -36,4 +36,4 @@ RUN chown -R nobody: /app
 USER nobody
 
 ENV HOME=/app
-CMD ["/app/bin/goth_example", "start_iex"]
+CMD ["/app/bin/goth_example", "start"]
