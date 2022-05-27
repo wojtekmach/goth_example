@@ -25,7 +25,7 @@ defmodule GothExample.Application do
     port = System.get_env("PORT", "4000") |> String.to_integer()
     Logger.info("starting on port #{port}")
 
-    # IO.inspect(Goth.Token.for_scope("https://www.googleapis.com/auth/cloud-platform"))
+    Logger.info(inspect(Goth.Token.for_scope("https://www.googleapis.com/auth/cloud-platform")))
 
     children = [
       {Plug.Cowboy, plug: Router, scheme: :http, port: port}
