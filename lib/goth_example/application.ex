@@ -5,6 +5,9 @@ defmodule Router do
   plug(:dispatch)
 
   get "/" do
+    require Logger
+    Logger.info(inspect(Goth.Token.for_scope("https://www.googleapis.com/auth/cloud-platform")))
+
     send_resp(conn, 200, "Hello, World!")
   end
 
