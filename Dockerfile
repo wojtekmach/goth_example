@@ -1,7 +1,4 @@
-FROM hexpm/elixir:1.13.4-erlang-25.0-alpine-3.15.4 as build
-
-# install build dependencies
-RUN apk add --no-cache --update git build-base
+FROM elixir as build
 
 # prepare build dir
 RUN mkdir /app
@@ -29,8 +26,7 @@ COPY rel rel
 RUN mix release
 
 # prepare release image
-FROM alpine:3.15.4 AS app
-RUN apk add --no-cache --update bash openssl libstdc++
+FROM elixir AS app
 
 RUN mkdir /app
 WORKDIR /app
